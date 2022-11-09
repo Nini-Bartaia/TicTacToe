@@ -1,0 +1,130 @@
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #1a2a33;
+}
+
+:root{
+    --cell-size: 150px;
+    --marksize:calc(var(--cell-size) * .6)
+    
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-content: center;
+    align-content: center; 
+    justify-items: center;
+    align-items: center;
+    
+}
+.wrapper .cell{
+   
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: rgb(31, 54, 65);
+    box-shadow: rgb(16 33 42) 0px -8px 0px inset;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+/* .cell .x{
+    display: none;
+} */
+
+.cell .circle{
+    display: none;
+}
+
+.background{
+    width: 100%;
+    height: 30%;
+    background-color: #1f3641;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.background .text{
+    font-size: 40px;
+    color:#f2b137;
+    letter-spacing: 2.5px;
+    margin: 30px;
+    font-weight: 700;
+
+}
+
+.background .button{
+    box-shadow: inset 0px -8px 0px #cc8b13;
+    background-color: #f2b137;
+    width: 150px;
+    height: 52px;
+    border-radius: 15px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1a2a33;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.wrapper .cell.x::before
+{
+    content: '';
+    transform: rotate(45deg);
+    background-color: rgb(49, 195, 189);;
+    width: calc(var(--marksize)* .20);
+    height: var(--marksize);
+    position: absolute;
+    
+     
+    
+}
+.wrapper .cell.x::after
+{
+    content: '';
+    transform: rotate(-45deg);
+    background-color: rgb(49, 195, 189);;
+    width: calc(var(--marksize)* .20);
+    height: var(--marksize);
+    position: absolute;
+}
+
+.wrapper .cell.circle::before
+{
+    content: '';
+    transform: rotate(45deg);
+    background-color: #f2b137;
+    width: var(--marksize);
+    height: var(--marksize);
+    position: absolute;
+    border-radius: 50%;
+    
+}
+.wrapper .cell.circle::after
+{
+    content: '';
+    transform: rotate(50deg);
+    background-color: #1f3641;
+    border-radius: 50%;
+    position: absolute;
+    width: calc(var(--marksize) * .7);
+    height: calc(var(--marksize) * .7);
+}
+
+.none{
+    display: none;
+}
+
