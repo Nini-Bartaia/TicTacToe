@@ -11,6 +11,7 @@ const COMBINATIONS=[
     [2,5,8],
     [0,4,8],
     [2,4,6],
+    [1,4,7]
 ]
 let xTurn
 x_class='x'
